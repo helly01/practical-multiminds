@@ -13,7 +13,7 @@ from .serializers import (
 )
 from .models import User, Task, Comment, TaskList
 from .permissions import IsAdminUser
-from .utils import send_welcome_email
+from .utils import send_email
 
 
 class RegisterView(generics.CreateAPIView):
@@ -21,9 +21,16 @@ class RegisterView(generics.CreateAPIView):
     serializer_class = UserSerializer
     permission_classes = [permissions.AllowAny]
 
-    def perform_create(self, serializer):
-        user = serializer.save()
-        send_welcome_email(user)
+    # def post(self, request, *args, **kwargs):
+    #     response = super().post(request, *args, **kwargs)
+    #     if response.status_code == status.HTTP_201_CREATED:
+    #         user_email = request.data.get("email")
+    #         send_email(
+    #             "Welcome to Task Manager!",
+    #             "Thank you for registering with Task Manager. We are excited to have you on board!",
+    #             [user_email],
+    #         )
+    #     return response
 
 
 # Handle login and generate token
