@@ -22,7 +22,7 @@ COMPLETE_STATUS = (
 class User(AbstractUser):
     email = models.EmailField(unique=True)  # Ensure email is unique
     phone_number = models.CharField(max_length=15, blank=True, null=True)
-    role = models.CharField(max_length=5, choices=ROLES, default="user")
+    role = models.CharField(max_length=5, choices=ROLES, default="admin")
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = [
         "username"

@@ -13,12 +13,17 @@ from .serializers import (
 )
 from .models import User, Task, Comment, TaskList
 from .permissions import IsAdminUser
+from .utils import send_welcome_email
 
 
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [permissions.AllowAny]
+
+    def perform_create(self, serializer):
+        user = serializer.save()
+        send_welcome_email(user)
 
 
 # Handle login and generate token

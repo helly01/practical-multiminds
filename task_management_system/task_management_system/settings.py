@@ -148,3 +148,20 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Adding this line we insure to use custom user model
 AUTH_USER_MODEL = "tasks.User"
+
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+# EMAIL_HOST = 'smtp.example.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'your-email@example.com'
+# EMAIL_HOST_PASSWORD = 'your-email-password'
+# DEFAULT_FROM_EMAIL = 'webmaster@example.com'
+
+# Email configue
+EMAIL_HOST = "smtp.sendgrid.net"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "hellypatel0111@gmail.com"
+EMAIL_HOST_PASSWORD = "PBP@1999"
+DEFAULT_FROM_EMAIL = "jagrutipatel0207@gmail.com"
