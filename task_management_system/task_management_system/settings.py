@@ -80,7 +80,7 @@ WSGI_APPLICATION = "task_management_system.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "task",
+        "NAME": "task1",
         "USER": "postgres",
         "PASSWORD": "Dev@123",
         "HOST": "localhost",
